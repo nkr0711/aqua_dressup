@@ -109,7 +109,6 @@ img:not([src]):not([alt]) { display: none; }
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 160px;
     max-height: 90vh;
     overflow-y: auto;
     background: rgba(255, 255, 255, 0.95);
@@ -125,8 +124,8 @@ img:not([src]):not([alt]) { display: none; }
   }
 
   .footer-group h4 {
-    margin: 4px 0;
-    font-size: 0.8rem;
+    margin: 0 0 6px;
+    font-size: 0.85rem;
     color: #2a5f90;
     text-align: left;
     padding-left: 8px;
@@ -140,8 +139,8 @@ img:not([src]):not([alt]) { display: none; }
   }
 
   .button-row button {
-    padding: 4px 8px;
-    font-size: 0.7rem;
+    padding: 6px 10px;
+    font-size: 0.75rem;
     border: none;
     border-radius: 8px;
     background-color: #b3e5fc;
@@ -159,15 +158,19 @@ img:not([src]):not([alt]) { display: none; }
   .container {
     width: 100%;
     max-width: 100%;
-    height: calc(100vh - 160px); /* フッターの高さに合わせて調整 */
+    height: calc(100vh - 220px); /* フッターの高さに合わせて調整 */
     margin: auto;
     margin-bottom: 0; /* 余白は height に含まれているので不要 */
   }
 
   .background-area {
-    width: 100%;
-    height: 100%;
     position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    overflow: hidden;
   }
 
   .character-area {
