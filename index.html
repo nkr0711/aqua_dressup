@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>アクアの着せ替え</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <!-- 操作パネル（PC表示） -->
+    <div class="controls">
+      <h3>表情</h3>
+      <button onclick="changeExpression('happy')">喜</button>
+      <button onclick="changeExpression('angry')">怒</button>
+      <button onclick="changeExpression('sad')">哀</button>
+      <button onclick="changeExpression('surprised')">楽</button>
+
+      <h3>衣装</h3>
+      <button onclick="changeOutfit('robe')">水のローブ</button>
+      <button onclick="changeOutfit('poncho')">冒険者のポンチョ</button>
+      <button onclick="changeOutfit('cape')">霧のケープ</button>
+      <button onclick="changeOutfit('')">衣装なし</button>
+
+      <h3>アクセサリー</h3>
+      <button onclick="changeAccessory('tiara')">ティアラ</button>
+      <button onclick="changeAccessory('pendant')">ペンダント</button>
+      <button onclick="changeAccessory('')">アクセなし</button>
+
+      <h3>アクセサリー2</h3>
+      <button onclick="changeBg_Accessory('wings')">羽</button>
+      <button onclick="changeBg_Accessory('')">アクセなし</button>
+
+      <h3>背景</h3>
+      <button onclick="changeBackground('forest')">森の泉</button>
+      <button onclick="changeBackground('sky')">空の上</button>
+      <button onclick="changeBackground('cave')">洞窟の湖</button>
+      <button onclick="changeBackground('')">背景なし</button>
+    </div>
+
+    <!-- 着せ替え画面 -->
+<div class="container">
+  <div class="background-area" id="background">
+    <div class="character-area">
+      <img id="bg_accessory" src="" alt="背景アクセ" />
+      <img id="outfit" src="" alt="衣装" />
+      <img id="base" src="" alt="アクア本体" />
+      <img id="accessory" src="" alt="アクセサリー" />
+      <img id="expression" src="" alt="表情" />
+      <div class="bubbles"></div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- フッター型メニュー（スマホ表示） -->
+<div class="footer-menu">
+  <div class="footer-group">
+    <h4>表情</h4>
+    <div class="button-row">
+      <button onclick="changeExpression('happy')">喜</button>
+      <button onclick="changeExpression('angry')">怒</button>
+      <button onclick="changeExpression('sad')">哀</button>
+      <button onclick="changeExpression('surprised')">楽</button>
+    </div>
+  </div>
+
+  <div class="footer-group">
+    <h4>衣装</h4>
+    <div class="button-row">
+      <button onclick="changeOutfit('robe')">ローブ</button>
+      <button onclick="changeOutfit('poncho')">ポンチョ</button>
+      <button onclick="changeOutfit('cape')">ケープ</button>
+      <button onclick="changeOutfit('')">なし</button>
+    </div>
+  </div>
+
+  <div class="footer-group">
+    <h4>アクセサリー</h4>
+    <div class="button-row">
+      <button onclick="changeAccessory('tiara')">ティアラ</button>
+      <button onclick="changeAccessory('pendant')">ペンダント</button>
+      <button onclick="changeAccessory('')">なし</button>
+    </div>
+  </div>
+
+  <div class="footer-group">
+    <h4>アクセサリー2</h4>
+    <div class="button-row">
+      <button onclick="changeBg_Accessory('wings')">羽</button>
+      <button onclick="changeBg_Accessory('')">なし</button>
+    </div>
+  </div>
+
+  <div class="footer-group">
+    <h4>背景</h4>
+    <div class="button-row">
+      <button onclick="changeBackground('forest')">森</button>
+      <button onclick="changeBackground('sky')">空</button>
+      <button onclick="changeBackground('cave')">洞窟</button>
+      <button onclick="changeBackground('')">なし</button>
+    </div>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

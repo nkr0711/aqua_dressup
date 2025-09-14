@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(to bottom, #e0f7ff, #ffffff);
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* 横並びレイアウト */
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  max-width: 1200px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+/* 着せ替え画面 */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 1 / 1;
+  margin: auto;
+}
+
+.container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+img[src=""] { display: none; }
+img:not([src]):not([alt]) { display: none; }
+
+/* 背景 */
+.background-area {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* 操作パネル（PC表示） */
+.controls {
+  flex: 1;
+  max-height: 800px;
+  overflow-y: auto;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #f0fbff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.controls h3 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  color: #2a5f90;
+}
+
+.controls button {
+  margin: 6px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  background-color: #b3e5fc;
+  color: #2a5f90;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.controls button:hover {
+  background-color: #81d4fa;
+  transform: scale(1.05);
+}
+
+/* フッター型メニューの初期状態（PCで非表示） */
+.footer-menu {
+  display: none;
+}
+
+/* スマホ表示に切替（768px以下） */
+@media (max-width: 768px) {
+  /* PC用パネルを隠す */
+  .controls {
+    display: none;
+  }
+
+  /* フッター型メニューを表示・固定 */
+  .footer-menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    z-index: 1000;
+  }
+
+  .footer-group {
+    margin-bottom: 12px;
+  }
+
+  .footer-group h4 {
+    margin: 0 0 6px;
+    font-size: 0.85rem;
+    color: #2a5f90;
+    text-align: left;
+    padding-left: 8px;
+  }
+
+  .button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+  }
+
+  .button-row button {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #b3e5fc;
+    color: #2a5f90;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  .button-row button:hover {
+    background-color: #81d4fa;
+    transform: scale(1.05);
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+    height: calc(100vh - 220px); /* フッターの高さに合わせて調整 */
+    margin: auto;
+    margin-bottom: 0; /* 余白は height に含まれているので不要 */
+  }
+
+  .background-area {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .character-area {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .character-area img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+  }
+}
+
+
+/* （任意）PC側での明示的な非表示。上の初期値で足りるが、残してもOK */
+@media (min-width: 769px) {
+  .footer-menu { display: none; }
+}
