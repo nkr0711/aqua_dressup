@@ -191,7 +191,7 @@ img:not([src]):not([alt]) { display: none; }
 }
 
 
-/* （任意）PC側での明示的な非表示。上の初期値で足りるが、残してもOK */
 @media (min-width: 769px) {
   .footer-menu { display: none; }
+
 }
