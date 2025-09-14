@@ -158,9 +158,8 @@ img:not([src]):not([alt]) { display: none; }
   .container {
     width: 100%;
     max-width: 100%;
-    height: calc(100vh - 220px); /* フッターの高さに合わせて調整 */
+    height: calc(100vh - 220px); 
     margin: auto;
-    margin-bottom: 0; /* 余白は height に含まれているので不要 */
   }
 
   .background-area {
@@ -193,5 +192,4 @@ img:not([src]):not([alt]) { display: none; }
 
 @media (min-width: 769px) {
   .footer-menu { display: none; }
-
 }
