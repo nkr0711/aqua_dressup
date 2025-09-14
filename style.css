@@ -160,6 +160,7 @@ img:not([src]):not([alt]) { display: none; }
     max-width: 100%;
     height: calc(100vh - 220px); 
     margin: auto;
+    margin-bottom: 0;
   }
 
   .background-area {
